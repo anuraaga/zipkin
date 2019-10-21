@@ -18,7 +18,7 @@ set -eux
 echo "*** Installing Kafka and dependencies"
 apk add --update --no-cache jq curl
 
-APACHE_MIRROR=$(curl --stderr /dev/null https://www.apache.org/dyn/closer.cgi\?as_json\=1 | jq -r '.preferred')
+APACHE_MIRROR=https://archive.apache.org/dist
 
 curl -sSL $APACHE_MIRROR/zookeeper/zookeeper-$ZOOKEEPER_VERSION/zookeeper-$ZOOKEEPER_VERSION.tar.gz | tar xz
 mkdir zookeeper
